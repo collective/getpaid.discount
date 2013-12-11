@@ -10,7 +10,10 @@ from zope.annotation.interfaces import IAnnotations
 
 from zope.component import getUtility
 
-from five.formlib.formbase import EditForm
+try:
+    from Products.Five.formlib.formbase import EditForm
+except ImportError:
+    from five.formlib.formbase import EditForm
 from Products.Five.utilities import marker
 from Products.Five.browser import BrowserView
 
